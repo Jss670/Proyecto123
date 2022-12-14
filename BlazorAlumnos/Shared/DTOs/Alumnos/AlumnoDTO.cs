@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BlazorAlumnos.Shared.DTOs.Materias;
+using System.ComponentModel.DataAnnotations;
 
 namespace BlazorAlumnos.Shared.DTOs.Alumnos
 {
     public class AlumnoDTO
     {
+        
         public int Id { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
@@ -11,5 +13,8 @@ namespace BlazorAlumnos.Shared.DTOs.Alumnos
         
         [Required]
         public string Matricula { get; set; }
+
+        
+        public List<MateriaDTO> MateriasDTO { get; set; }
     }
 }

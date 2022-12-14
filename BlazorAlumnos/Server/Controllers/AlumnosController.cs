@@ -23,13 +23,17 @@ namespace BlazorAlumnos.Server.Controllers
 
             var alumnosDto = new List<AlumnoDTO>();
 
-            foreach(var alumno in alumnos) 
+            foreach (var alumno in alumnos)
             {
                 var alumnoDto = new AlumnoDTO();
                 alumnoDto.Id = alumno.Id;
                 alumnoDto.Nombre = alumno.Nombre;
                 alumnoDto.Matricula = alumno.Matricula;
-
+                if (alumno.Materias != null)
+                    foreach (var materia in alumno.Materias)
+                    {
+                        alumnoDto.MateriasDTO.Add(new Shared.DTOs.Materias.MateriaDTO() { Id = materia.Id, Nombre = materia.Nombre });
+                    }
                 alumnosDto.Add(alumnoDto);
             }
             return alumnosDto;

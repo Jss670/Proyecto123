@@ -4,6 +4,7 @@ namespace BlazorAlumnos.Server.Model.Entities
 {
     public class Alumno
     {
+        
         public int Id { get; set; }
         
         [Required]
@@ -11,5 +12,8 @@ namespace BlazorAlumnos.Server.Model.Entities
 
         [Required]
         public string Matricula { get; set; }
+
+        public List<Materia> Materias { get; set; }
+
     }
 }
